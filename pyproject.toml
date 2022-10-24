@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "airbnb2-study-backend"
+version = "0.1.0"
+description = ""
+authors = ["BORB-CHOI <qzsec299@naver.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "airbnb2_study_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.1.2"
+Pillow = "^9.2.0"
+djangorestframework = "^3.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
