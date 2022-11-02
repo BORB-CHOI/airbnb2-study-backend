@@ -22,9 +22,10 @@
 ### Wishlists
 
 - [x] GET POST /wishlists
-- [o] GET PUT DELETE /wishlists
-- [o] PUT /wishlists/1/rooms/2
-- [o] is_likes
+- [x] GET PUT DELETE /wishlists
+- [x] PUT /wishlists/1/rooms/2
+- [x] PUT /wishlists/1/experiences/2
+- [x] is_like
 
 ### Users
 
@@ -38,12 +39,13 @@
 
 ### Experiences (ToDo)
 
-- [ ] GET POST /experiences
-- [ ] GET PUT DELETE /experiences/1
-- [ ] GET /experiences/1/perks
-- [ ] GET POST /perks
-- [ ] GET PUT DELETE /perks/1
-- [ ] POST /rooms/1/photos
-- [ ] DELETE /medias/photos/1
-- [ ] GET POST /experiences/1/bookings
-- [ ] GET PUT DELETE /experiences/1/bookings/2
+- [x] GET POST /experiences
+- [x] GET PUT DELETE /experiences/1
+- [x] GET /experiences/1/perks
+- [x] GET POST /experiences/1/reviews
+- [x] GET POST /perks
+- [x] GET PUT DELETE /perks/1
+- [x] POST /experiences/1/photos
+- [x] DELETE /medias/photos/1
+- [x] GET POST /experiences/1/bookings
+- [x] GET PUT DELETE /experiences/1/bookings/2
