@@ -113,7 +113,89 @@ class TestAmenity(APITestCase):
 
     def test_put_amenity(self):
         # your code challenge
-        pass
+
+        updated_amenity_name = "Updated Test Name"
+        updated_amenity_description = "Updated Test Dsc"
+
+        # name and desceription
+        response = self.client.put(
+            "/api/v1/rooms/amenities/1",
+            data={
+                "name": updated_amenity_name,
+                "description": updated_amenity_description,
+            },
+        )
+
+        data = response.json()
+
+        self.assertEqual(
+            response.status_code,
+            200,
+            "Not 200 status code",
+        )
+        self.assertEqual(
+            data["name"],
+            updated_amenity_name,
+        )
+        self.assertEqual(
+            data["description"],
+            updated_amenity_description,
+        )
+
+        # Just name
+        response = self.client.put(
+            "/api/v1/rooms/amenities/1",
+            data={
+                "name": self.NAME,
+            },
+        )
+
+        data = response.json()
+
+        self.assertEqual(
+            response.status_code,
+            200,
+            "Not 200 status code",
+        )
+        self.assertEqual(
+            data["name"],
+            self.NAME,
+        )
+        self.assertEqual(
+            data["description"],
+            updated_amenity_description,
+        )
+
+        # Just desceription
+        response = self.client.put(
+            "/api/v1/rooms/amenities/1",
+            data={
+                "description": self.DESC,
+            },
+        )
+
+        data = response.json()
+
+        self.assertEqual(
+            response.status_code,
+            200,
+            "Not 200 status code",
+        )
+        self.assertEqual(
+            data["name"],
+            self.NAME,
+        )
+        self.assertEqual(
+            data["description"],
+            self.DESC,
+        )
+
+        # None
+        response = self.client.put("/api/v1/rooms/amenities/1")
+        data = response.json()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("name", data)
 
     def test_delete_amenity(self):
 
