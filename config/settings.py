@@ -31,13 +31,14 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["airbnb-study-backend.run.goorm.io"]
 
 
 # Application definition
 THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
+    "corsheaders",
 ]
 
 CUSTOM_APPS = [
@@ -68,6 +69,7 @@ INSTALLED_APPS = SYSTEM_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -168,3 +170,20 @@ REST_FRAMEWORK = {
         "config.authentication.JWTAuthentication",
     ],
 }
+
+# fetch 허용
+CORS_ALLOWED_ORIGINS = ["http://airbnb-study-frontend.run.goorm.io", "https://airbnb-study-backend.run.goorm.io"]
+# POST 되도록 CSRF token 제공.
+CSRF_TRUSTED_ORIGINS = ["http://airbnb-study-frontend.run.goorm.io"]
+
+
+# javascript로 fetch 허용
+CORS_ALLOW_CREDENTIALS = True
+
+
+
+GH_SECRET = env("GH_SECRET")
+
+
+SESSION_COOKIE_DOMAIN = ".run.goorm.io"
+CSRF_COOKIE_DOMAIN = ".run.goorm.io"
