@@ -183,6 +183,9 @@ CORS_ALLOW_CREDENTIALS = True
 
 
 GH_SECRET = env("GH_SECRET")
+# CF_ID = env("CF_ID")
+# CF_TOKEN = env("CF_TOKEN")
+
 
 
 SESSION_COOKIE_DOMAIN = ".run.goorm.io"
