@@ -31,7 +31,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["airbnb-study-backend.run.goorm.io"]
+ALLOWED_HOSTS = ["127.0.0.1", "airbnb-study-backend.run.goorm.io"]
 
 
 # Application definition
@@ -172,7 +172,11 @@ REST_FRAMEWORK = {
 }
 
 # fetch 허용
-CORS_ALLOWED_ORIGINS = ["http://airbnb-study-frontend.run.goorm.io", "https://airbnb-study-backend.run.goorm.io"]
+CORS_ALLOWED_ORIGINS = [
+    "http://airbnb-study-frontend.run.goorm.io",
+    "https://airbnb-study-backend.run.goorm.io",
+]
+
 # POST 되도록 CSRF token 제공.
 CSRF_TRUSTED_ORIGINS = ["http://airbnb-study-frontend.run.goorm.io"]
 
@@ -181,11 +185,9 @@ CSRF_TRUSTED_ORIGINS = ["http://airbnb-study-frontend.run.goorm.io"]
 CORS_ALLOW_CREDENTIALS = True
 
 
-
 GH_SECRET = env("GH_SECRET")
 # CF_ID = env("CF_ID")
 # CF_TOKEN = env("CF_TOKEN")
-
 
 
 SESSION_COOKIE_DOMAIN = ".run.goorm.io"
